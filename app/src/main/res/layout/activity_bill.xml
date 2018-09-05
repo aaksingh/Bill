@@ -4,169 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginRight="5dp"
     android:orientation="vertical"
     tools:context=".Bill">
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/checkbox_Samosa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:onClick="onCheckboxClicked"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="Samosa "
-            android:textSize="20dp" />
+            android:text="Samosa"
+            android:textSize="40dp" />
 
-        <Button
-            android:id="@+id/plusSamosa"
+        <Spinner
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="plusSamosa"
-            android:text="+" />
+            android:layout_height="wrap_content"></Spinner>
 
-        <Button
-            android:id="@+id/minusSamosa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="minusSamosa"
-            android:text="-" />
 
-        <TextView
-            android:id="@+id/SamosaQuanity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quant. 0"
-            android:textSize="20dp" />
 
-        <!--<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="$0.00"
-            android:id="@+id/billSamosa"/>-->
     </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
+        <CheckBox
+            android:id="@+id/checkbox_Choti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Choti      "
-            android:textSize="20dp"
-            android:fontFamily="sans-serif"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:id="@+id/plusChoti"
-            android:onClick="plusChoti" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:id="@+id/minusChoti"
-            android:onClick="minusChoti"/>
+            android:textSize="40dp"
+            android:onClick="onCheckboxClicked" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quant 0"
-            android:textSize="20dp"
-            android:id="@+id/ChotiaQuanity"/>
+            android:text="bread"
+            android:textSize="40dp"
+            android:fontFamily="sans-serif"
+            />
 
-        <!--<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="$0.00"
-            android:id="@+id/billChoti"/>-->
+
+            <!--android:focusable="false"-->
+
+
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/checkbox_Chai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:onClick="onCheckboxClicked"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chai      "
-            android:textSize="23dp"
+            android:text="Chai"
+            android:textSize="40dp"
             android:fontFamily="sans-serif"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:id="@+id/plusChai"
-            android:onClick="plusChai" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:id="@+id/minusChai"
-            android:onClick="minusChai"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quant. 0"
-            android:textSize="20dp"
-            android:id="@+id/ChaiQuanity"/>
 
-        <!--<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="$0.00"
-            android:id="@+id/billChai"/>-->
+
+
+
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/checkbox_RandA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:onClick="onCheckboxClicked"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RandA  "
-            android:textSize="23dp"
+            android:text="colddrink"
+            android:textSize="40dp"
             android:fontFamily="sans-serif"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:id="@+id/plusRandA"
-            android:onClick="plusRandA" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:id="@+id/minusRandA"
-            android:onClick="minusRandA"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quant. 0"
-            android:textSize="20dp"
-            android:id="@+id/RandAQuanity"/>
 
-       <!-- <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="$0.00"
-            android:id="@+id/billRandA"/>-->
+
+
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -199,11 +140,6 @@
             android:text="0"
             android:textSize="100dp"
             android:id="@+id/TotalBill"/>
-
-
-
     </LinearLayout>
-
-
 
 </LinearLayout>
