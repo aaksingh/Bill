@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Bill">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Samosa "
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/plusSamosa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="plusSamosa"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/minusSamosa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="minusSamosa"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/SamosaQuanity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quant. 0"
+            android:textSize="20dp" />
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="$0.00"
+            android:id="@+id/billSamosa"/>-->
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choti      "
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/plusChoti"
+            android:onClick="plusChoti" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/minusChoti"
+            android:onClick="minusChoti"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quant 0"
+            android:textSize="20dp"
+            android:id="@+id/ChotiaQuanity"/>
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="$0.00"
+            android:id="@+id/billChoti"/>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chai      "
+            android:textSize="23dp"
+            android:fontFamily="sans-serif"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/plusChai"
+            android:onClick="plusChai" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/minusChai"
+            android:onClick="minusChai"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quant. 0"
+            android:textSize="20dp"
+            android:id="@+id/ChaiQuanity"/>
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="$0.00"
+            android:id="@+id/billChai"/>-->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RandA  "
+            android:textSize="23dp"
+            android:fontFamily="sans-serif"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/plusRandA"
+            android:onClick="plusRandA" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/minusRandA"
+            android:onClick="minusRandA"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quant. 0"
+            android:textSize="20dp"
+            android:id="@+id/RandAQuanity"/>
+
+       <!-- <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="$0.00"
+            android:id="@+id/billRandA"/>-->
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:onClick="total"/>
+    </LinearLayout>
+
+    <LinearLayout   android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹:"
+            android:textSize="100dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="0"
+            android:textSize="100dp"
+            android:id="@+id/TotalBill"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
