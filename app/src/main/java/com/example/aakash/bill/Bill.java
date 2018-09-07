@@ -15,6 +15,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
+import dalvik.system.PathClassLoader;
+
 public class Bill extends AppCompatActivity {
 
     public int SamosaBill = 0;
@@ -22,7 +24,8 @@ public class Bill extends AppCompatActivity {
     public int ChaiBill = 0;
     public int RandABill = 0,PakodaBill=0,ColdDrinkBill=0;
     public int total = 0;
-    EditText editText;
+    EditText editText,editText2,editText3,editText4,editText5,editText6;
+    boolean samosa=false,chai=false,choti=false,pakoda=false,colddrink=false,randa=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,28 +42,94 @@ public class Bill extends AppCompatActivity {
     }
 
     public void total(View view) {
-        SamosaBill = Integer.parseInt(editText.getText().toString());
-        SamosaBill = 5*SamosaBill;
 
-        ChotiBill = Integer.parseInt(editText.getText().toString());
-        ChotiBill = 10*ChotiBill;
+        if(samosa) {
+            SamosaBill = Integer.parseInt(editText.getText().toString());
+            if(SamosaBill>0) {
+                SamosaBill = 5 * SamosaBill;
+            }
+            else {
+                SamosaBill=0;
+            }
+        }
+        else{
+            SamosaBill=0;
+        }
 
-        ChaiBill = Integer.parseInt(editText.getText().toString());
-        ChaiBill = 7*ChaiBill;
+        if(choti) {
+            ChotiBill = Integer.parseInt(editText2.getText().toString());
+            if(ChotiBill>0) {
+                ChotiBill = 10 * ChotiBill;
+            }
+            else{
+                ChotiBill=0;
+            }
+        }
+        else {
+            ChotiBill=0;
+        }
+
+        if(chai) {
+
+                ChaiBill = Integer.parseInt(editText3.getText().toString());
+            if(ChaiBill>0) {
+                ChaiBill = 7 * ChaiBill;
+            }
+            else{
+                ChaiBill=0;
+            }
+        }
+        else {
+            ChaiBill=0;
+
+        }
 
 
-        RandABill = Integer.parseInt(editText.getText().toString());
-        RandABill = 16*RandABill;
+        if(randa) {
 
-        PakodaBill =Integer.parseInt(editText.getText().toString());
-        PakodaBill =10*PakodaBill;
+                RandABill = Integer.parseInt(editText4.getText().toString());
+            if(RandABill>0) {
+                RandABill = 16 * RandABill;
+            }
+            else {
+                RandABill=0;
+            }
+        }
+        else {
+            RandABill=0;
+        }
 
-        ColdDrinkBill =Integer.parseInt(editText.getText().toString());
-        ColdDrinkBill =15*ColdDrinkBill;
 
+        if(pakoda) {
 
+                PakodaBill = Integer.parseInt(editText6.getText().toString());
+            if(PakodaBill>0) {
+                PakodaBill = 10 * PakodaBill;
+            }
+            else {
+                PakodaBill=0;
+            }
+        }
+        else {
+            PakodaBill=0;
+        }
 
-        display(SamosaBill + ChotiBill + ChaiBill + RandABill +PakodaBill + ColdDrinkBill);
+        if (colddrink) {
+
+                ColdDrinkBill = Integer.parseInt(editText5.getText().toString());
+            if(ColdDrinkBill>0) {
+                ColdDrinkBill = 15 * ColdDrinkBill;
+            }
+            else {
+                ColdDrinkBill=0;
+            }
+        }
+        else {
+            ColdDrinkBill=0;
+        }
+
+        int FinalBill=SamosaBill + ChaiBill + ChotiBill + RandABill + PakodaBill + ColdDrinkBill;
+        display(FinalBill);
     }
 
     public void onCheckboxClicked(View view) {
@@ -77,6 +146,7 @@ public class Bill extends AppCompatActivity {
                     editText.setFocusable(true);
                     editText.setFocusableInTouchMode(true);
                     editText.requestFocus();
+                    samosa=true;
 
                 } else {
                     editText = findViewById(R.id.plaintextSamosa);
@@ -85,103 +155,111 @@ public class Bill extends AppCompatActivity {
                     editText.setFocusable(false);
                     editText.setFocusableInTouchMode(false);
                     editText.clearFocus();
+
                 }
                 break;      
 
             case R.id.checkbox_Choti:
                 if (checked) {
-                    editText = (EditText) findViewById(R.id.plaintextChoti);
-                    editText.setEnabled(true);
-                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
-                    editText.setFocusable(true);
-                    editText.setFocusableInTouchMode(true);
-                    editText.requestFocus();
-                } else {
-                    editText = (EditText) findViewById(R.id.plaintextChoti);
-                    editText.setEnabled(false);
-                    editText.setInputType(InputType.TYPE_NULL);
-                    editText.setFocusable(false);
-                    editText.setFocusableInTouchMode(false);
+                    editText2 = (EditText) findViewById(R.id.plaintextChoti);
+                    editText2.setEnabled(true);
+                    editText2.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText2.setFocusable(true);
+                    editText2.setFocusableInTouchMode(true);
+                    editText2.requestFocus();
+                    choti=true;
 
-                    editText.clearFocus();
+                } else {
+                    editText2 = (EditText) findViewById(R.id.plaintextChoti);
+                    editText2.setEnabled(false);
+                    editText2.setInputType(InputType.TYPE_NULL);
+                    editText2.setFocusable(false);
+                    editText2.setFocusableInTouchMode(false);
+
+                    editText2.clearFocus();
 
                 }
                 break;
             case R.id.checkbox_Chai:
                 if (checked) {
-                    editText = (EditText) findViewById(R.id.plaintextChai);
-                    editText.setEnabled(true);
-                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
-                    editText.setFocusable(true);
-                    editText.setFocusableInTouchMode(true);
-                    editText.requestFocus();
+                    editText3 = (EditText) findViewById(R.id.plaintextChai);
+                    editText3.setEnabled(true);
+                    editText3.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText3.setFocusable(true);
+                    editText3.setFocusableInTouchMode(true);
+                    editText3.requestFocus();
+                    chai=true;
                 } else {
-                    editText = (EditText) findViewById(R.id.plaintextChai);
-                    editText.setEnabled(false);
-                    editText.setInputType(InputType.TYPE_NULL);
-                    editText.setFocusable(false);
-                    editText.setFocusableInTouchMode(false);
+                    editText3 = (EditText) findViewById(R.id.plaintextChai);
+                    editText3.setEnabled(false);
+                    editText3.setInputType(InputType.TYPE_NULL);
+                    editText3.setFocusable(false);
+                    editText3.setFocusableInTouchMode(false);
 
-                    editText.clearFocus();
+                    editText3.clearFocus();
 
                 }
                 break;
             case R.id.checkbox_RandA:
                 if (checked) {
-                    editText = (EditText) findViewById(R.id.plaintextRandA);
-                    editText.setEnabled(true);
-                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
-                    editText.setFocusable(true);
-                    editText.setFocusableInTouchMode(true);
-                    editText.requestFocus();
+                    editText4 = (EditText) findViewById(R.id.plaintextRandA);
+                    editText4.setEnabled(true);
+                    editText4.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText4.setFocusable(true);
+                    editText4.setFocusableInTouchMode(true);
+                    editText4.requestFocus();
+                    randa=true;
                 } else {
-                    editText = (EditText) findViewById(R.id.plaintextRandA);
-                    editText.setEnabled(false);
-                    editText.setInputType(InputType.TYPE_NULL);
-                    editText.setFocusable(false);
-                    editText.setFocusableInTouchMode(false);
+                    editText4 = (EditText) findViewById(R.id.plaintextRandA);
+                    editText4.setEnabled(false);
+                    editText4.setInputType(InputType.TYPE_NULL);
+                    editText4.setFocusable(false);
+                    editText4.setFocusableInTouchMode(false);
 
-                    editText.clearFocus();
+                    editText4.clearFocus();
 
                 }
                 break;
 
             case R.id.checkbox_Colddrink:
                 if (checked) {
-                    editText = (EditText) findViewById(R.id.plaintextColdDrink);
-                    editText.setEnabled(true);
-                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
-                    editText.setFocusable(true);
-                    editText.setFocusableInTouchMode(true);
-                    editText.requestFocus();
+                    editText5 = (EditText) findViewById(R.id.plaintextColdDrink);
+                    editText5.setEnabled(true);
+                    editText5.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText5.setFocusable(true);
+                    editText5.setFocusableInTouchMode(true);
+                    editText5.requestFocus();
+                    colddrink=true;
                 } else {
-                    editText = (EditText) findViewById(R.id.plaintextColdDrink);
-                    editText.setEnabled(false);
-                    editText.setInputType(InputType.TYPE_NULL);
-                    editText.setFocusable(false);
-                    editText.setFocusableInTouchMode(false);
+                    editText5 = (EditText) findViewById(R.id.plaintextColdDrink);
+                    editText5.setEnabled(false);
+                    editText5.setInputType(InputType.TYPE_NULL);
+                    editText5.setFocusable(false);
+                    editText5.setFocusableInTouchMode(false);
 
                     editText.clearFocus();
+
 
                 }
                 break;
 
             case R.id.checkbox_Pakoda:
                 if (checked) {
-                    editText = (EditText) findViewById(R.id.plaintextPakoda);
-                    editText.setEnabled(true);
-                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
-                    editText.setFocusable(true);
-                    editText.setFocusableInTouchMode(true);
-                    editText.requestFocus();
+                    editText6 = (EditText) findViewById(R.id.plaintextPakoda);
+                    editText6.setEnabled(true);
+                    editText6.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText6.setFocusable(true);
+                    editText6.setFocusableInTouchMode(true);
+                    editText6.requestFocus();
+                    pakoda=true;
                 } else {
-                    editText = (EditText) findViewById(R.id.plaintextPakoda);
-                    editText.setEnabled(false);
-                    editText.setInputType(InputType.TYPE_NULL);
-                    editText.setFocusable(false);
-                    editText.setFocusableInTouchMode(false);
+                    editText6 = (EditText) findViewById(R.id.plaintextPakoda);
+                    editText6.setEnabled(false);
+                    editText6.setInputType(InputType.TYPE_NULL);
+                    editText6.setFocusable(false);
+                    editText6.setFocusableInTouchMode(false);
 
-                    editText.clearFocus();
+                    editText6.clearFocus();
 
                 }
                 break;
