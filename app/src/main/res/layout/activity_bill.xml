@@ -18,7 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="40dp"
-            android:onClick="onCheckboxClicked"/>
+            android:onClick="onCheckboxClicked"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,9 +27,15 @@
             android:text="Samosa"
             android:textSize="40dp" />
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Spinner>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/plaintextSamosa"
+            android:background="@null"
+            android:focusable="false"
+
+            android:textAlignment="textEnd"/>
+
 
 
 
@@ -54,7 +61,14 @@
             android:textSize="40dp"
             android:fontFamily="sans-serif"
             />
-
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/plaintextChoti"
+            android:background="@null"
+            android:focusable="false"
+            android:textAlignment="textEnd"
+            />
 
             <!--android:focusable="false"-->
 
@@ -80,6 +94,14 @@
             android:textSize="40dp"
             android:fontFamily="sans-serif"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/plaintextChai"
+            android:background="@null"
+            android:focusable="false"
+
+            android:textAlignment="textEnd"/>
 
 
 
@@ -103,6 +125,14 @@
             android:text="colddrink"
             android:textSize="40dp"
             android:fontFamily="sans-serif"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/plaintextRandA"
+            android:background="@null"
+            android:focusable="false"
+
+            android:textAlignment="textEnd"/>
 
 
 
@@ -139,7 +169,9 @@
 
             android:text="0"
             android:textSize="100dp"
-            android:id="@+id/TotalBill"/>
+            android:id="@+id/TotalBill" />
+
+
     </LinearLayout>
 
 </LinearLayout>
