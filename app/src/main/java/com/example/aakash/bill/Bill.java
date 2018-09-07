@@ -17,11 +17,10 @@ import java.text.NumberFormat;
 
 public class Bill extends AppCompatActivity {
 
-    public int SamosaBill = 0, SamosaBill1;
-    public String quantitySamosa, quantityChoti, quantityRandA, quantityChai;
+    public int SamosaBill = 0;
     public int ChotiBill = 0;
     public int ChaiBill = 0;
-    public int RandABill = 0;
+    public int RandABill = 0,PakodaBill=0,ColdDrinkBill=0;
     public int total = 0;
     EditText editText;
 
@@ -31,7 +30,6 @@ public class Bill extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill);
-
     }
 
 
@@ -41,7 +39,28 @@ public class Bill extends AppCompatActivity {
     }
 
     public void total(View view) {
-        display(SamosaBill);
+        SamosaBill = Integer.parseInt(editText.getText().toString());
+        SamosaBill = 5*SamosaBill;
+
+        ChotiBill = Integer.parseInt(editText.getText().toString());
+        ChotiBill = 10*ChotiBill;
+
+        ChaiBill = Integer.parseInt(editText.getText().toString());
+        ChaiBill = 7*ChaiBill;
+
+
+        RandABill = Integer.parseInt(editText.getText().toString());
+        RandABill = 16*RandABill;
+
+        PakodaBill =Integer.parseInt(editText.getText().toString());
+        PakodaBill =10*PakodaBill;
+
+        ColdDrinkBill =Integer.parseInt(editText.getText().toString());
+        ColdDrinkBill =15*ColdDrinkBill;
+
+
+
+        display(SamosaBill + ChotiBill + ChaiBill + RandABill +PakodaBill + ColdDrinkBill);
     }
 
     public void onCheckboxClicked(View view) {
@@ -51,24 +70,13 @@ public class Bill extends AppCompatActivity {
 
             case R.id.checkbox_Samosa:
                 if (checked) {
+
                     editText = (EditText) findViewById(R.id.plaintextSamosa);
                     editText.setEnabled(true);
                     editText.setInputType(InputType.TYPE_CLASS_TEXT);
                     editText.setFocusable(true);
                     editText.setFocusableInTouchMode(true);
                     editText.requestFocus();
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
-
-                    try{
-                        SamosaBill = Integer.parseInt(editText.getText().toString());
-                    }catch (Exception e){
-
-                        
-                    }
-                    SamosaBill = SamosaBill * 5;
-                   // display(SamosaBill);
-
 
                 } else {
                     editText = findViewById(R.id.plaintextSamosa);
@@ -78,7 +86,7 @@ public class Bill extends AppCompatActivity {
                     editText.setFocusableInTouchMode(false);
                     editText.clearFocus();
                 }
-                break;
+                break;      
 
             case R.id.checkbox_Choti:
                 if (checked) {
@@ -137,39 +145,48 @@ public class Bill extends AppCompatActivity {
 
                 }
                 break;
+
+            case R.id.checkbox_Colddrink:
+                if (checked) {
+                    editText = (EditText) findViewById(R.id.plaintextColdDrink);
+                    editText.setEnabled(true);
+                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText.setFocusable(true);
+                    editText.setFocusableInTouchMode(true);
+                    editText.requestFocus();
+                } else {
+                    editText = (EditText) findViewById(R.id.plaintextColdDrink);
+                    editText.setEnabled(false);
+                    editText.setInputType(InputType.TYPE_NULL);
+                    editText.setFocusable(false);
+                    editText.setFocusableInTouchMode(false);
+
+                    editText.clearFocus();
+
+                }
+                break;
+
+            case R.id.checkbox_Pakoda:
+                if (checked) {
+                    editText = (EditText) findViewById(R.id.plaintextPakoda);
+                    editText.setEnabled(true);
+                    editText.setInputType(InputType.TYPE_CLASS_TEXT);
+                    editText.setFocusable(true);
+                    editText.setFocusableInTouchMode(true);
+                    editText.requestFocus();
+                } else {
+                    editText = (EditText) findViewById(R.id.plaintextPakoda);
+                    editText.setEnabled(false);
+                    editText.setInputType(InputType.TYPE_NULL);
+                    editText.setFocusable(false);
+                    editText.setFocusableInTouchMode(false);
+
+                    editText.clearFocus();
+
+                }
+                break;
         }
     }
-
-
-
-    /*public void samosaClicked(View view) {
-        editText=(EditText)findViewById(R.id.plaintextSamosa);
-        quantitySamosa=editText.getText().toString();
-        SamosaBill= Integer.parseInt(quantitySamosa);
-        SamosaBill=SamosaBill*5;
-
-
-    }
-    /*
-    public void chotiClicked(View view){
-
-        editText=(EditText)findViewById(R.id.plaintextChoti);
-        quantityChoti=editText.getText().toString();
-
-    }
-
-    public void chaiClicked(View view){
-        editText=(EditText)findViewById(R.id.plaintextChai);
-        quantityChai=editText.getText().toString();
-
-    }
-
-    public void andAClicked(View view){
-        editText=(EditText)findViewById(R.id.plaintextRandA);
-        quantityRandA=editText.getText().toString();
-
-
-    }*/
 
 
 }
